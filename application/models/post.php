@@ -3,7 +3,11 @@
 class Post extends Eloquent{
 	
 	public function user(){
-		$this->belongs_to('User');
+		return $this->belongs_to('User');
+	}
+
+	public function images(){
+		return $this->has_many('Image');
 	}
 
 }

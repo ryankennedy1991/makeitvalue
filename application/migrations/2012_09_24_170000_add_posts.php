@@ -21,7 +21,6 @@ class Add_Posts {
 			$table->timestamps();	
 
 			$table->foreign('user_id')->references('id')->on('users');
-			$table->foreign('image_id')->references('id')->on('images')->on_delete('cascade');
 
 		});
 	}

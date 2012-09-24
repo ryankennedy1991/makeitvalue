@@ -78,7 +78,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ URL::to_asset('js/jquery.js') }}"></script>
+    <script src="{{ URL::to_asset('js/jquery-1.8.0.min.js') }}"></script>
     <script src="{{ URL::to_asset('js/bootstrap-transition.js') }}"></script>
     <script src="{{ URL::to_asset('js/bootstrap-alert.js') }}"></script>
     <script src="{{ URL::to_asset('js/bootstrap-modal.js') }}"></script>
@@ -91,6 +91,14 @@
     <script src="{{ URL::to_asset('js/bootstrap-collapse.js') }}"></script>
     <script src="{{ URL::to_asset('js/bootstrap-carousel.js') }}"></script>
     <script src="{{ URL::to_asset('js/bootstrap-typeahead.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::to_asset('js/tiny_mce/tiny_mce.js') }}"></script>
+<script type="text/javascript">
+
+      tinyMCE.init({
+        mode : "textareas",
+        theme : "advanced"  //(n.b. no trailing comma, this will be critical as you experiment later)
+      });
+      </script>
 
   </body>
 </html>
