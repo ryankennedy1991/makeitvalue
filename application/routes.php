@@ -56,10 +56,13 @@ Route::group(array('before' => 'auth'), function()
     Route::put('users/(:any)', array('as' => 'users.update', 'uses' => 'users@update'));
     Route::delete('users/(:num)', array('as' => 'users.delete', 'uses' => 'users@delete'));
 
+    Route::get('dashboard', array('as' => 'users.dashboard', 'uses' => 'users@dashboard'));
+
 });
 
 Route::get('login', array('as' => 'users.login', 'uses' => 'users@login'));
 Route::post('login', array('as' => 'users.check', 'uses' => 'users@check'));
+Route::get('logout', array('as' => 'users.logout', 'uses' => 'users@logout'));
 
 //Route::get('test', array('uses' => 'users@test'));
 
@@ -138,5 +141,5 @@ Route::filter('csrf', function()
 
 Route::filter('auth', function()
 {
-	//if (Auth::guest()) return Redirect::to('login');
+	if (Auth::guest()) return Redirect::to('login');
 });

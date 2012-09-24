@@ -33,11 +33,22 @@ class Users_Controller extends Base_Controller{
 	}
 
 	public function action_login(){
-		echo "login";
+		return View::make('users.login');
 	}
 
 	public function action_check(){
-		echo "Hello";
+		$credentials = array(
+			'username' => Input::get('email'),
+			'password' => Input::get('password')	
+		);
+
+		if(Auth::attempt($credentials)){
+			return Redirect::to('dashboard');
+		} 
+
+		return Redirect::to('login');
+
+
 	}	
 
 	public function action_test(){
@@ -49,6 +60,15 @@ class Users_Controller extends Base_Controller{
 		//$user->save();
 
 		echo "test data created!";
-	}			
+	}
+
+	public function action_dashboard(){
+		return View::make('users.dashboard');
+	}	
+
+	public function action_logout(){
+		Auth::logout();
+		return View::make('users.login');
+	}				
 
 }

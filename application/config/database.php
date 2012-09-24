@@ -70,7 +70,7 @@ return array(
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => 'localhost',
-			'database' => 'makeitvalue',
+			'database' => 'makeitvalue2',
 			'username' => 'root',
 			'password' => 'root',
 			'charset'  => 'utf8',
